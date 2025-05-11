@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efeito slideDow</title>
+
+      <h1>Efeito slideToggle</h1>
+            <!--display: none -> serve para esconder a figura, a foto.-->
+        <style>
+            
+            div{width: auto; height: auto; display: none ;}
+        </style>
+
+<script  src="jquery-3.6.4.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('input').click(function(){
+                $('div').slideToggle(5000); //velocidade: slow
+            });
+
+        });
+    </script>   
+</head>
+<body>
+    <input type="button" value="clique para visualizar o efeito"/>
+    <div>
+    <!--img src='' serve para colocar uma imagem-->
+    <img src="mimi e isa.png" width="400px" height="500px" alt="foto" title="foto"/>
+    </div>
+</body>
+</html>

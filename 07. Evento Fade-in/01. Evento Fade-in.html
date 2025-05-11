@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento Fade-in</title>
+
+    <script type="text/javascript" src="jquery-3.7.0.min.js"></script>
+
+    <script>
+
+        $(document).ready(function(){        //Inicio da função
+            $('#btnTest').click(function(){  //Efeito click
+
+                // $('#minhaDivUp').slideUp();                  //Sem parâmetros: o efeito é executado em 400ms
+
+                $('#minhaDivUp').slideUp(1000);                 //Parâmetro com a duração em ms do efeito
+
+                // $('#minhaDivUp').slideUp('slow');            //Parâmetro slow: o efeito é executado em 600ms
+
+                // $('#minhaDivUp').slideUp('fast');            //Parâmetro fast: o efeito é executado em 200ms
+
+                $('#minhaDivDow').slideDow('fast', function(){  //Informada duração e função de allback
+                    alert('Slide concluido');
+                })
+            
+            })                               //Fim do efeito click
+        })                                   //Fim do inicio da função
+    </script>
+</head>
+<body>
+
+    <button id="btnTest">Clique aqui</button>
+
+    <div id="minhaDivUp" style="height: 500px; width: 200px; background: blue"></div>
+    
+</body>
+</html>

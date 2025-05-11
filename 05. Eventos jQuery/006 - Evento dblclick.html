@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DblClick</title>
+    <script type="text/javascript" src="jquery-3.6.4.min.js"></script>
+
+    
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: green;
+            border: 1px solid #000;
+        }
+         .mudar{
+            background: red;
+         }
+
+
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $('div').dblclick(function(){
+                $('div').toggleClass('mudar');
+                $(".mensagem").html('Você disparou o evento dblclick');
+            });
+            
+        });
+    </script>
+</head>
+        
+<body>
+        <!--Na <div> pode se criar qualquer coisa, moldura, texto, etc-->
+        <div></div>
+        <span class="mensagem"></span>   
+</body>
+</html>

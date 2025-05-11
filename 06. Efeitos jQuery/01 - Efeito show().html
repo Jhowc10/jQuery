@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efeito jQuery</title>
+    <script src="jquery-3.6.4.min.js"></script>
+
+    <h1>Efeito show()</h1>
+    <!--Faz aparecer o objeto-->
+
+    <style>
+        div{width: 185px;
+            height: 185px;
+            background: red;
+            display: none;}
+    </style>
+    
+    <script>
+
+        /* Este evento faz o objeto crescer
+        $('div').show('show') // slow, normal e fast
+        $('div').show('1000') //Velocidade em milissegundos */      
+
+        $(document).ready(function(){
+            $('input').click(function(){
+                $('div').show(10000);
+
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+    
+    <input type="button" value="Clique para visualizar o efeito"/>
+    <div></div>
+    
+</body>
+</html>

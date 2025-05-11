@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comapração entre JS e jQuery</title>
+
+    <script type="text/javascript" src="jquery-3.7.0.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('a').click(function(){
+                alert('Você clicou no link utilizando jQuery.')
+                //$('#mensagem').text('Você clicou no link utilizando jQuery')
+            })
+        })
+    </script>
+
+</head>
+<body>
+
+    <h1>Comparação javascript<em> versus</em> jQuery</h1>
+
+    <!-- Link vazio com Javascript -->
+    <a href="#" onclick="mensagem();">Clique aqui (Eu sou Javascript).</a>
+
+    <br><br>
+
+    <!-- Link vazio com jQuery -->
+    <a href="#">Clique aqui (Eu sou jQuery).</a>
+    <span id="mensagem"></span>
+    
+</body>
+</html>

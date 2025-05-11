@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa de texto</title>
+
+    <script type="text/javascript" src="jquery-3.7.0.min.js"></script>
+
+    <style type="text/css">
+        #div_controle_mouse{          /*Cria um retângulo verde claro na parte superior da tela*/
+            background: #5F9EA0;
+            width:          600px;    /* Comprimento do retângulo */
+            height:         100px;    /* Altura do retângulo */
+            position:    absolute;    /* Deixa ele na frente de tudo que a na tela */
+            top:              15%;    /* Movimenta o retângulo para cima e para baixo */
+            left:             30%;    /* Movimenta o retângulo para os lados */
+            margin-top:     -50px;    /* Movimenta o retângulo para cima e para baixo */
+            margin-right:   -50px;
+        }
+        #div_outros_eventos_mouse{  /* Cria um segundo retângulo */
+            background: blue;
+            width:       600px;
+            height:      100px;
+            position: absolute; 
+            top:            2%;
+            left:          30%;
+            margin-top:  200px;
+            margin-left: -50px;
+        }
+        #div_formulario{          /* Cria um estilo para um formulário */
+            width:       580px;
+            height:      120px;
+            border:  solid 2px;   /* Cria uma borda em volta do formulário */
+            padding-top:  20px;   /* Movimenta o formulário para cima e para baixo dentro da borda */
+            padding-left: 20px;   /* Movimenta o formulário para os lados dentro da borda */
+            position: absolute;
+            top:           25%;
+            left:          30%;
+            margin-top:  200px;
+            margin-left: -50px;
+        }
+        #mensagem{     /* Apresenta a mensagem gerada pelo jQuery na parte de cima do quadrado */
+            text-align: center; /* Alinha o texto */
+            font-size:    30px;
+        }
+    </style>
+  
+
+    <script>
+    
+        $(document).ready(function(){   //Inicio da função principal
+
+    //mouserover()
+            $('#div_controle_mouse').mouseover(function(){
+                alert("O cursor foi posicionado sobre a div - mouseover");
+            });
+
+    //mouseout()
+    // div escolhida para o efeito    efeito     função para dizer o que fazer
+            $('#div_controle_mouse').mouseout(function(){
+                $('#mensagens').text('O cursor saiu da div - mouseout.');
+    // pego a div mensagem    efeito       o que ira fazer
+            });
+
+    //mousemove()
+            $('#div_controle_mouse').mousemove(function(){
+                $('#mensagens').text('O mouse está dentro da div - mousemove(), mova ele para fora.');
+            });
+            
+    //mousedown()
+            $('#div_controle_mouse').mousedown(function(){
+                alert('Um botão do mouse foi prescionado - mousedown.');
+            });
+
+
+
+                                     /* OUTROS EVENTOS MOUSE */
+
+
+
+    //click()
+            $('#div_outros_eventos_mouse').click(function(){
+                $('#mensagens').text('Você clicou uma vez no retangulo laranja.');
+            });
+
+    //dblclick()
+            $('#div_outros_eventos_mouse').dblclick(function(){
+                $('#mensagens').text('Você clicou duas vezes no retângulo laranja.')
+            })
+
+    //hover()
+            $('#div_outros_eventos_mouse').hover(function(){
+                $(this).css('background', 'orange');
+                $('#mensagens').text('Você entrou no retângulo azul, mas agora ele é laranja.')              
+            },
+            function(){
+                $(this).css('background', 'blue');
+                $('#mensagens').text('Você saiu do retângulo laranja, mas agora ele está azul.');
+            }
+            );
+
+    
+    
+                                /* Tratando eventos em um formulário */
+
+
+
+    //blur()
+            $('#nome').blur(function(){
+                $('#mensagens').text('O input perdeu o foco.');
+            });
+
+    //change()
+            $('#sexo').change(function(){
+                $('#mensagens').text('O valor do sexo foi modificado.');
+            });
+
+    //focus()
+            $('#nome').focus(function(){
+                $('#mensagens').text('O input recebeu o foco.');
+            });
+
+    //select()
+            $('#nome').select(function(){
+                $('#mensagens').text('Texto selecionado');
+            });
+
+    //submit()
+            $('#formulario').submit(function(){
+                alert('O formulário foi enviado');
+            });
+
+        }); // Fim da função principal
+
+
+    </script>
+    
+</head>
+<body>
+
+    <div id="mensagens"></div>                 <!--Mostra as mensagens-->
+
+    <div id="div_controle_mouse"></div>        <!--Gera um retângulo-->
+
+    <div id="div_outros_eventos_mouse"></div>  <!--Testa os eventos do mouse, outro retângulo-->
+
+    <div id="div_formulario">                  <!--div para colocar o formulário dentro-->
+
+        <form id="formulario">                 <!--Criação de um formuálario-->
+
+            Digite seu nome:
+            <input type="text" id="nome">      <!--Caixa de texto-->
+
+            <br><br>
+
+            Selecione o sexo:
+            <select id="sexo">                 <!--Caixa de seleção-->
+                <option value="0" selected disabled>Selecione o sexo</option>
+                <option value="1">Masculino</option>
+                <option value="2">Feminino</option>
+            </select> <!--Fim da caixa de seleção-->
+
+            <br><br>
+
+            <input type="submit" value="Enviar">
+
+        </form>      <!--Fim do formulário-->
+
+    </div>           <!--Fim da div-->
+    
+</body>
+</html>
